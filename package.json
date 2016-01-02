@@ -1,0 +1,49 @@
+{
+  "name": "eslint-config-earnest-es7",
+  "version": "1.0.0",
+  "description": "Earnest's ESLint config for ES7, following StandardJS with added checks",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meetearnest/eslint-config-earnest-es7"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "earnest",
+    "javascript",
+    "styleguide",
+    "es7",
+    "es6"
+  ],
+  "author": "Earnest, Inc (https://www.meetearnest.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meetearnest/eslint-config-earnest-es7/issues"
+  },
+  "homepage": "https://github.com/meetearnest/eslint-config-earnest-es7",
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-core": "^6.3.26",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-3": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-plugin-babel": "^3.0.0",
+    "babel-eslint": "^5.0.0-beta6",
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1"
+  },
+  "peerDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-3": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-plugin-babel": "^3.0.0",
+    "babel-eslint": "^5.0.0-beta6"
+  }
+}
