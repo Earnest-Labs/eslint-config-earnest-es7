@@ -7,7 +7,7 @@ Earnest's ESLint config for ES7, following StandardJS with added checks
 
 2. Add an additional entry to `"devDependencies"`:
 
-    `"eslint-config-earnest": "latest"`
+    `"eslint-config-earnest-es7": "latest"`
 
 3. Add a root level `.eslintrc` that references this package
 
