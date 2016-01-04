@@ -7,7 +7,9 @@ Earnest's ESLint config for ES7, following StandardJS with added checks
 
 2. Add an additional entry to `"devDependencies"`:
 
-    `"eslint-config-earnest-es7": "latest"`
+    ```json
+    "eslint-config-earnest-es7": "latest"
+    ```
 
 3. Add a root level `.eslintrc` that references this package
 
@@ -33,4 +35,4 @@ Earnest's ESLint config for ES7, following StandardJS with added checks
     }
     ```
 
-6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages.  For Vim use [Syntastic](https://github.com/scrooloose/syntastic).
+6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
