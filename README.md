@@ -7,30 +7,32 @@ Earnest's ESLint config for ES7, following StandardJS with added checks
 
 2. Add an additional entry to `"devDependencies"`:
 
-    `"eslint-config-earnest-es7": "latest"`
+    ```json
+    "eslint-config-earnest-es7": "latest"
+    ```
 
 3. Add a root level `.eslintrc` that references this package
 
-```
-{ "extends": "earnest" }
-```
+    ```json
+    { "extends": "earnest" }
+    ```
 
 4. Add another `.eslintrc` to your `test` folder that supports mocha
 
-```
-{
-  "extends": "earnest",
-  "env": { "mocha": true }
-}
-```
+    ```json
+    {
+      "extends": "earnest",
+      "env": { "mocha": true }
+    }
+    ```
 
 5. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
 
-```
-"scripts": {
-  "lint": "./node_modules/.bin/eslint .",
-  "lint-changed": "git diff --name-only --cached --relative | grep '\\.js$' | xargs ./node_modules/.bin/eslint"
-}
-```
+    ```json
+    "scripts": {
+      "lint": "./node_modules/.bin/eslint .",
+      "lint-changed": "git diff --name-only --cached --relative | grep '\\.js$' | xargs ./node_modules/.bin/eslint"
+    }
+    ```
 
-6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages.
+6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
