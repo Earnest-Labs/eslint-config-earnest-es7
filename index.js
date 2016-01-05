@@ -56,6 +56,9 @@ module.exports = {
 /**
  * Variables
  */
+    "no-var": 2,
+    "prefer-const": 2,
+    "no-const-assign": 2,
     "no-shadow": 0,
     "no-shadow-restricted-names": 2,
     "no-unused-vars": [ 2, {
