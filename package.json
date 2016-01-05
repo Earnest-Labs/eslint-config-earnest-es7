@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-earnest-es7",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Earnest's ESLint config for ES7, following StandardJS with added checks",
   "main": "index.js",
   "scripts": {
