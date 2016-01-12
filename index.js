@@ -61,10 +61,10 @@ module.exports = {
     "no-const-assign": 2,
     "no-shadow": 0,
     "no-shadow-restricted-names": 2,
-    "no-unused-vars": [ 2, {
+    "no-unused-vars": [2, {
       "vars": "local",
       "args": "none"
-    } ],
+    }],
     "no-use-before-define": 0,
     "no-undef": 2,
     "no-delete-var": 2,
@@ -72,8 +72,8 @@ module.exports = {
 /**
  * Possible errors
  */
-    "comma-dangle": [ 2, "never" ],
-    "no-cond-assign": [ 2, "always" ],
+    "comma-dangle": [2, "never"],
+    "no-cond-assign": [2, "always"],
     "no-console": 1,
     "no-constant-condition": 2,
     "no-control-regex": 2,
@@ -104,11 +104,11 @@ module.exports = {
  */
     "no-extra-boolean-cast": 2,
     "consistent-return": 2,
-    "curly": [ 2, "multi-line" ],
+    "curly": [2, "multi-line"],
     "default-case": 2,
-    "dot-notation": [ 2, {
+    "dot-notation": [2, {
       "allowKeywords": true
-    } ],
+    }],
     "eqeqeq": 2,
     "guard-for-in": 0,
     "no-caller": 2,
@@ -137,7 +137,7 @@ module.exports = {
     "no-throw-literal": 2,
     "no-with": 2,
     "radix": 2,
-    "wrap-iife": [ 2, "any" ],
+    "wrap-iife": [2, "any"],
     "yoda": 2,
 
 /**
@@ -148,36 +148,36 @@ module.exports = {
     "no-array-constructor": 2,
     "no-new-object": 2,
     "new-parens": 2,
-    "consistent-this": [ 2, "self" ],
-    "space-unary-ops": [ 1, { "words": true, "nonwords": false } ],
-    "space-in-parens": [ 2, "never" ],
-    "object-curly-spacing": [ 2, "always" ],
-    "space-before-blocks": [ 2, "always" ],
-    "array-bracket-spacing": [ 2, "always" ],
-    "indent": [ 2, 2, { "SwitchCase": 1 } ],
-    "brace-style": [ 2, "1tbs", {
+    "consistent-this": [2, "self"],
+    "space-unary-ops": [1, {"words": true, "nonwords": false}],
+    "space-in-parens": [2, "never"],
+    "object-curly-spacing": [2, "never"],
+    "space-before-blocks": [2, "always"],
+    "array-bracket-spacing": [2, "never"],
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "brace-style": [2, "1tbs", {
       "allowSingleLine": true
-    } ],
+    }],
     "quotes": [
       2, "single", "avoid-escape"
     ],
-    "camelcase": [ 2, {
+    "camelcase": [2, {
       "properties": "never"
-    } ],
-    "comma-spacing": [ 2, {
+    }],
+    "comma-spacing": [2, {
       "before": false,
       "after": true
-    } ],
-    "comma-style": [ 2, "last" ],
+    }],
+    "comma-style": [2, "last"],
     "eol-last": 2,
-    "key-spacing": [ 0, {
+    "key-spacing": [0, {
       "beforeColon": false,
       "afterColon": true
-    } ],
+    }],
     "new-cap": 0,
-    "no-multiple-empty-lines": [ 2, {
+    "no-multiple-empty-lines": [2, {
       "max": 2
-    } ],
+    }],
     "no-unneeded-ternary": 2,
     "no-nested-ternary": 2,
     "no-spaced-func": 2,
@@ -185,25 +185,25 @@ module.exports = {
     "no-extra-parens": 0,
     "no-underscore-dangle": 0,
     "one-var": 0,
-    "padded-blocks": [ 2, "never" ],
-    "semi": [ 2, "never" ],
-    "semi-spacing": [ 2, {
+    "padded-blocks": [2, "never"],
+    "semi": [2, "always"],
+    "semi-spacing": [2, {
       "before": false,
       "after": true
-    } ],
-    "space-before-keywords": [ 2, "always" ],
+    }],
+    "space-before-keywords": [2, "always"],
     "space-after-keywords": 2,
-    "space-before-function-paren": [ 2, {
+    "space-before-function-paren": [2, {
       "anonymous": "always",
-      "named": "always"
-    } ],
+      "named": "never"
+    }],
     "space-infix-ops": 2,
     "space-return-throw-case": 2,
     "spaced-comment": 2,
     "no-multi-spaces": 0,
-    "max-len": [ 2, 100, 2, {
+    "max-len": [2, 100, 2, {
       "ignoreComments": false,
       "ignoreUrls": true
-    } ]
+    }]
   }
-}
+};

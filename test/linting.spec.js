@@ -2,7 +2,7 @@ import { CLIEngine } from 'eslint'
 import { execSync } from 'child_process'
 
 describe('Linting', () => {
-  describe('StandardJS Exemplar - Bittorrent DHT Client', () => {
+  describe('Exemplar - Bittorrent DHT Client in Earnest Style', () => {
     it('passes linting', () => {
       var res = eslint(`${__dirname}/data/bittorrent-dht-client.js`)
       if (res) throw new Error(res)
