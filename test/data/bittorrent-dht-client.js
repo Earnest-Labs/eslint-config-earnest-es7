@@ -1032,7 +1032,8 @@ DHT.prototype._lookup = function (id, opts, cb) {
 DHT.prototype._onData = function (data, rinfo) {
   const self = this;
   const addr = rinfo.address + ':' + rinfo.port;
-  let message, errMessage;
+  let message;
+  let errMessage;
 
   try {
     message = bencode.decode(data);
