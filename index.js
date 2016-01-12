@@ -98,6 +98,7 @@ module.exports = {
     "valid-jsdoc": 0,
     "valid-typeof": 2,
     "no-unexpected-multiline": 2,
+    "strict": [2, "never"],
 
 /**
  * Best practices
