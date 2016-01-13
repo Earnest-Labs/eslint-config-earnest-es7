@@ -36,3 +36,14 @@ Earnest's ESLint config for ES7
     ```
 
 6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
+
+## Linting this Repository
+
+In order to run linting against this repository, you must create a self-referential link to this module:
+ 
+ ```
+ npm install
+ npm link
+ npm link eslint-config-earnest-es7
+ npm run lint
+ ```
