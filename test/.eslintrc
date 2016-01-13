@@ -1,6 +1,3 @@
 {
-  "extends": "earnest-es7",
-  "env": {
-    "mocha": true
-  }
+  "extends": "earnest-es7/mocha"
 }
