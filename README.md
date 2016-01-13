@@ -14,15 +14,14 @@ Earnest's ESLint config for ES7
 3. Add a root level `.eslintrc` that references this package
 
     ```json
-    { "extends": "earnest" }
+    { "extends": "earnest-es7" }
     ```
 
 4. Add another `.eslintrc` to your `test` folder that supports mocha
 
     ```json
     {
-      "extends": "earnest",
-      "env": { "mocha": true }
+      "extends": "earnest-es7/mocha"
     }
     ```
 
