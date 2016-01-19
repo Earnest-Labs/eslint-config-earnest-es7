@@ -12,13 +12,13 @@ Earnest's ESLint config for ES7
 2. Add a root level `.eslintrc` that references this package
 
     ```
-    echo '{ "extends": "earnest" }' > .eslintrc
+    echo '{ "extends": "earnest-es7" }' > .eslintrc
     ```
 
 3. Add another `.eslintrc` to your `test` folder that supports mocha
 
     ```
-    echo '{\n\s\s"extends": "earnest",\n\s\s"env": { "mocha": true }\n}' > test/.eslintrc
+    echo '{\n\s\s"extends": "earnest-es7",\n\s\s"env": { "mocha": true }\n}' > test/.eslintrc
     ```
 
 4. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
