@@ -18,7 +18,7 @@ Earnest's ESLint config for ES7
 3. Add another `.eslintrc` to your `test` folder that supports mocha
 
     ```
-    echo '{\n\s\s"extends": "earnest-es7",\n\s\s"env": { "mocha": true }\n}' > test/.eslintrc
+    echo '{\n\s\s"extends": "earnest-es7/mocha"\n}' > test/.eslintrc
     ```
 
 4. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
@@ -31,3 +31,14 @@ Earnest's ESLint config for ES7
     ```
 
 5. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
+
+## Linting this Repository
+
+In order to run linting against this repository, you must create a self-referential link to this module:
+ 
+ ```
+ npm install
+ npm link
+ npm link eslint-config-earnest-es7
+ npm run lint
+ ```
