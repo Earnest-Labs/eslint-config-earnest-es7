@@ -3,30 +3,25 @@ Earnest's ESLint config for ES7
 
 ## Usage
 
-1. Add all of the `"devDependencies"` listed in [package.json](https://github.com/meetearnest/eslint-config-earnest-es7/blob/master/package.json) to your project's `"devDependencies"` section.
+1. Install the following `"devDependencies"` in your repo:
 
-2. Add an additional entry to `"devDependencies"`:
-
-    ```json
-    "eslint-config-earnest-es7": "latest"
+    ```
+    npm install eslint-config-earnest-es7@latest babel-core babel-cli babel-eslint babel-preset-es2015 babel-preset-stage-3 eslint eslint-plugin-babel --save-dev
     ```
 
-3. Add a root level `.eslintrc` that references this package
+2. Add a root level `.eslintrc` that references this package
 
-    ```json
-    { "extends": "earnest" }
+    ```
+    echo '{ "extends": "earnest" }' > .eslintrc
     ```
 
-4. Add another `.eslintrc` to your `test` folder that supports mocha
+3. Add another `.eslintrc` to your `test` folder that supports mocha
 
-    ```json
-    {
-      "extends": "earnest",
-      "env": { "mocha": true }
-    }
+    ```
+    echo '{\n\s\s"extends": "earnest",\n\s\s"env": { "mocha": true }\n}' > test/.eslintrc
     ```
 
-5. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
+4. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
 
     ```json
     "scripts": {
@@ -35,4 +30,4 @@ Earnest's ESLint config for ES7
     }
     ```
 
-6. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
+5. (Recommended) Setup your editor to support inline ESLint support. For Sublime Text, that means `npm install -g eslint` then installing `SublimeLinter` and `SublimeLinter-contrib-eslint` packages. For Vim, use [Syntastic](https://github.com/scrooloose/syntastic).
