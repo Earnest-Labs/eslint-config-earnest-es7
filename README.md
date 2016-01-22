@@ -6,19 +6,20 @@ Earnest's ESLint config for ES7
 1. Install the following `"devDependencies"` in your repo:
 
     ```
-    npm install eslint-config-earnest-es7@latest babel-core babel-cli babel-eslint babel-preset-es2015 babel-preset-stage-3 eslint eslint-plugin-babel --save-dev
+    npm install @earnest/eslint-config-es7@latest babel-core babel-cli babel-eslint babel-preset-es2015 babel-preset-stage-3 eslint eslint-plugin-babel --save-dev
     ```
 
 2. Add a root level `.eslintrc` that references this package
 
     ```
-    echo '{ "extends": "earnest-es7" }' > .eslintrc
+    echo '{ "extends": "@earnest/eslint-config-es7" }' > .eslintrc
     ```
 
 3. Add another `.eslintrc` to your `test` folder that supports mocha
-
+  
     ```
-    echo '{\n\s\s"extends": "earnest-es7"\n}' > test/.eslintrc
+    npm install eslint-plugin-mocha --save-dev
+    echo '{ "extends": "@earnest/eslint-config-es7/mocha" }' > test/.eslintrc
     ```
 
 4. (Recommended) Add the following entries to your `package.json` for simplified CLI access to linting:
@@ -39,6 +40,6 @@ In order to run linting against this repository, you must create a self-referent
  ```
  npm install
  npm link
- npm link eslint-config-earnest-es7
+ npm link @earnest/eslint-config-es7
  npm run lint
  ```

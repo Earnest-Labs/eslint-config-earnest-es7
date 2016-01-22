@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": "earnest-es7",
+  "extends": "@earnest/eslint-config-es7",
   "plugins": [
     "mocha"
   ],
