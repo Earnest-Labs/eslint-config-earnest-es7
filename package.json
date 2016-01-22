@@ -1,11 +1,11 @@
 {
-  "name": "eslint-config-earnest-es7",
+  "name": "@earnest/eslint-config-es7",
   "version": "3.0.1",
   "description": "Earnest's ESLint config for ES7",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "test": "./node_modules/.bin/mocha --timeout 5000 --compilers js:babel-core/register",
     "preversion": "npm test",
     "postversion": "git push && git push --tags && npm publish"
   },
