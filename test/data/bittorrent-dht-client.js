@@ -147,7 +147,7 @@ function DHT(opts) {
   });
 
   // Create socket and attach listeners
-  self.socket = module.exports.dgram.createSocket('udp' + self._ipv);
+  self.socket = module.exports.dgram.createSocket(`udp${self._ipv}`);
   self.socket.on('message', self._onData.bind(self));
   self.socket.on('listening', self._onListening.bind(self));
   self.socket.on('error', noop); // throw away errors
@@ -247,7 +247,7 @@ DHT.prototype.announce = function (infoHash, port, cb) {
   self._debug('announce %s %s', infoHash, port);
 
   self.localAddresses.forEach(function (address) {
-    self._addPeer(address + ':' + port, infoHash);
+    self._addPeer(`${address}:${port}`, infoHash);
   });
 
   // TODO: it would be nice to not use a table when a lookup is in progress
@@ -348,7 +348,7 @@ DHT.prototype._put = function (opts, cb) {
       id: self.nodeIdBuffer,
       v: opts.v
     };
-    const localAddr = '127.0.0.1:' + self._port;
+    const localAddr = `127.0.0.1:${self._port}`;
     if (isMutable) {
       if (opts.cas) localData.cas = opts.cas;
       localData.sig = opts.sign(encodeSigData(opts));
@@ -832,7 +832,7 @@ DHT.prototype._resolveContacts = function (contacts, cb) {
       } else {
         dns.lookup(addrData[0], self._ipv, function (err, host) {
           if (err) return cb(null, null);
-          contact.addr = host + ':' + addrData[1];
+          contact.addr = `${host}:${addrData[1]}`;
           cb(null, contact);
         });
       }
@@ -1016,7 +1016,7 @@ DHT.prototype._lookup = function (id, opts, cb) {
       const closest = (opts.findNode ? table : tokenful).closest({id: idBuffer}, K);
       self._debug('K closest nodes are:');
       closest.forEach(function (contact) {
-        self._debug('  ' + contact.addr + ' ' + idToHexString(contact.id));
+        self._debug(`  ${contact.addr} ${idToHexString(contact.id)}`);
       });
       if (opts.get) return cb(new Error('hash not found'));
       cb(null, closest);
@@ -1031,7 +1031,7 @@ DHT.prototype._lookup = function (id, opts, cb) {
  */
 DHT.prototype._onData = function (data, rinfo) {
   const self = this;
-  const addr = rinfo.address + ':' + rinfo.port;
+  const addr = `${rinfo.address}:${rinfo.port}`;
   let message;
   let errMessage;
 
@@ -1039,7 +1039,7 @@ DHT.prototype._onData = function (data, rinfo) {
     message = bencode.decode(data);
     if (!message) throw new Error('message is empty');
   } catch (err) {
-    errMessage = err.message + ' from ' + addr + ' (' + data + ')';
+    errMessage = `${err.message} from ${addr} (${data})`;
     self._debug(errMessage);
     self.emit('warning', new Error(errMessage));
     return;
@@ -1049,7 +1049,7 @@ DHT.prototype._onData = function (data, rinfo) {
 
   if (type !== MESSAGE_TYPE.QUERY && type !== MESSAGE_TYPE.RESPONSE &&
     type !== MESSAGE_TYPE.ERROR) {
-    errMessage = 'unknown message type ' + type + ' from ' + addr;
+    errMessage = `unknown message type ${type} from ${addr}`;
     self._debug(errMessage);
     self.emit('warning', new Error(errMessage));
     return;
@@ -1115,11 +1115,11 @@ DHT.prototype._onResponseOrError = function (addr, type, message) {
     // unexpected message!
     let errMessage;
     if (err) {
-      errMessage = 'got unexpected error from ' + addr + ' ' + err.message;
+      errMessage = `got unexpected error from ${addr} ${err.message}`;
       self._debug(errMessage);
       self.emit('warning', new Error(errMessage));
     } else {
-      errMessage = 'got unexpected message from ' + addr + ' ' + JSON.stringify(message);
+      errMessage = `got unexpected message from ${addr} ${JSON.stringify(message)}`;
       self._debug(errMessage);
       self.emit('warning', new Error(errMessage));
     }
@@ -1441,7 +1441,7 @@ DHT.prototype._onAnnouncePeer = function (addr, message) {
     infoHash, port, addr, token
   );
 
-  self._addPeer(addrData[0] + ':' + port, infoHash);
+  self._addPeer(`${addrData[0]}:${port}`, infoHash);
 
   // send acknowledgement
   const res = {
@@ -1591,14 +1591,14 @@ DHT.prototype.toArray = function () {
 DHT.prototype._addrIsSelf = function (addr) {
   const self = this;
   return self._port &&
-  LOCAL_HOSTS[self._ipv].some(function (host) { return host + ':' + self._port === addr; });
+  LOCAL_HOSTS[self._ipv].some(function (host) { return `${host}:${self._port}` === addr; });
 };
 
 DHT.prototype._debug = function () {
   const self = this;
   const args = [].slice.call(arguments);
-  args[0] = '[' + self.nodeId.substring(0, 7) + '] ' + args[0];
-  debug.apply(null, args);
+  args[0] = `[${self.nodeId.substring(0, 7)}] ${args[0]}`;
+  debug(...args);
 };
 
 /**
@@ -1639,7 +1639,7 @@ function parseNodeInfo(nodeInfo) {
       });
     }
   } catch (err) {
-    debug('error parsing node info ' + nodeInfo);
+    debug(`error parsing node info ${nodeInfo}`);
   }
   return contacts;
 }
@@ -1653,7 +1653,7 @@ function parsePeerInfo(list) {
   try {
     return list.map(compact2string);
   } catch (err) {
-    debug('error parsing peer info ' + list);
+    debug(`error parsing peer info ${list}`);
     return [];
   }
 }

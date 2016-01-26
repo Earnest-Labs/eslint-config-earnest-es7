@@ -45,20 +45,36 @@ module.exports = {
 /**
  * eslint-plugin-babel rule toggles
  */
-    "babel/generator-star-spacing": 1,
-    "babel/new-cap": 1,
+    "babel/generator-star-spacing": [2, "after"],
+    "babel/new-cap": 0,
     "babel/array-bracket-spacing": 0,
-    "babel/object-curly-spacing": 0,
+    "babel/object-curly-spacing": [2, "never"],
     "babel/object-shorthand": 0,
     "babel/arrow-parens": 0,
-    "babel/no-await-in-loop": 1,
+    "babel/no-await-in-loop": 2,
+
+/**
+ * ES6+
+ */
+    "arrow-body-style": 2,
+    "arrow-spacing": 2,
+    "constructor-super": 2,
+    "no-arrow-condition": 2,
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "no-var": 2,
+    "prefer-arrow-callback": 0,
+    "prefer-const": 2,
+    "prefer-reflect": 0,
+    "prefer-spread": 2,
+    "prefer-template": 2,
+    "require-yield": 0,
 
 /**
  * Variables
  */
-    "no-var": 2,
-    "prefer-const": 2,
-    "no-const-assign": 2,
     "no-shadow": 0,
     "no-shadow-restricted-names": 2,
     "no-unused-vars": [2, {
@@ -152,7 +168,6 @@ module.exports = {
     "consistent-this": [2, "self"],
     "space-unary-ops": [1, {"words": true, "nonwords": false}],
     "space-in-parens": [2, "never"],
-    "object-curly-spacing": [2, "never"],
     "space-before-blocks": [2, "always"],
     "array-bracket-spacing": [2, "never"],
     "indent": [2, 2, {"SwitchCase": 1}],
@@ -175,7 +190,6 @@ module.exports = {
       "beforeColon": false,
       "afterColon": true
     }],
-    "new-cap": 0,
     "no-multiple-empty-lines": [2, {
       "max": 2
     }],
