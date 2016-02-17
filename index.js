@@ -59,7 +59,7 @@ module.exports = {
     "arrow-body-style": 2,
     "arrow-spacing": 2,
     "constructor-super": 2,
-    "no-arrow-condition": 2,
+    "no-confusing-arrow": 2,
     "no-class-assign": 2,
     "no-const-assign": 2,
     "no-dupe-class-members": 2,
@@ -116,11 +116,12 @@ module.exports = {
     "no-unexpected-multiline": 2,
     "strict": [2, "never"],
 
+    // consistent-return had a bug and in eslint@2.x.x it is more strict, disabling for now
+    "consistent-return": 0,
 /**
  * Best practices
  */
     "no-extra-boolean-cast": 2,
-    "consistent-return": 2,
     "curly": [2, "multi-line"],
     "default-case": 2,
     "dot-notation": [2, {
@@ -206,14 +207,12 @@ module.exports = {
       "before": false,
       "after": true
     }],
-    "space-before-keywords": [2, "always"],
-    "space-after-keywords": 2,
+    "keyword-spacing": 2,
     "space-before-function-paren": [2, {
       "anonymous": "always",
       "named": "never"
     }],
     "space-infix-ops": 2,
-    "space-return-throw-case": 2,
     "spaced-comment": 2,
     "no-multi-spaces": 0,
     "max-len": [2, 100, 2, {
