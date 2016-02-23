@@ -56,7 +56,7 @@ module.exports = {
 /**
  * ES6+
  */
-    "arrow-body-style": 2,
+    "arrow-body-style": 0,
     "arrow-spacing": 2,
     "constructor-super": 2,
     "no-confusing-arrow": 2,
