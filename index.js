@@ -48,7 +48,7 @@ module.exports = {
     "babel/generator-star-spacing": [2, "after"],
     "babel/new-cap": 0,
     "babel/array-bracket-spacing": 0,
-    "babel/object-curly-spacing": [2, "never"],
+    "babel/object-curly-spacing": 0,
     "babel/object-shorthand": 0,
     "babel/arrow-parens": 0,
     "babel/no-await-in-loop": 2,
