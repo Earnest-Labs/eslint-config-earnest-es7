@@ -5,7 +5,7 @@ set -euo pipefail
 
 
 # Login to NPM
-local npmrc_contents="//registry.npmjs.org/:_authToken=${NPM_TOKEN}"
+npmrc_contents="//registry.npmjs.org/:_authToken=${NPM_TOKEN}"
 echo $npmrc_contents > "${HOME}/.npmrc"
 echo $npmrc_contents > "${SNAP_WORKING_DIR}/.npmrc"
 
