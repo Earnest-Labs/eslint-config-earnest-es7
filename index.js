@@ -45,13 +45,11 @@ module.exports = {
 /**
  * eslint-plugin-babel rule toggles
  */
-    "babel/generator-star-spacing": [2, "after"],
     "babel/new-cap": 0,
     "babel/array-bracket-spacing": 0,
     "babel/object-curly-spacing": 0,
     "babel/object-shorthand": 0,
     "babel/arrow-parens": 0,
-    "babel/no-await-in-loop": 2,
 
 /**
  * ES6+
@@ -59,6 +57,8 @@ module.exports = {
     "arrow-body-style": 0,
     "arrow-spacing": 2,
     "constructor-super": 2,
+    "generator-star-spacing": [2, "after"],
+    "no-await-in-loop": 2,
     "no-confusing-arrow": 2,
     "no-class-assign": 2,
     "no-const-assign": 2,
