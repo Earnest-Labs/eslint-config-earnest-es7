@@ -1,6 +1,6 @@
 {
   "name": "@earnest/eslint-config-es7",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "Earnest's ESLint config for ES7",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "babel-eslint": "^7.2.2",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-3": "^6.11.0",
-    "eslint": "^3.19.0",
+    "eslint": "^6.0.1",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-mocha": "^4.0.0",
     "mocha": "^2.5.3"
@@ -43,6 +43,6 @@
     "babel-preset-env": "^1.6.1",
     "eslint-plugin-mocha": "^4.0.0",
     "eslint-plugin-babel": "^4.1.1",
-    "eslint": "^3.19.0"
+    "eslint": "^6.0.1"
   }
 }
