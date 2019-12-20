@@ -1,6 +1,0 @@
-#!/bin/bash
-cd "$(dirname "$0")"
-source _common.sh
-
-cd "../.."
-gogo test ci
