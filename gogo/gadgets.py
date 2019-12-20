@@ -1,23 +1,23 @@
-def build_test_command(base):
-    def test_command(args):
-        if args.test_method == 'ci':
-            test_ci = base.build_command_func('docker-compose run ci yarn run test-cov-jenkins')
-            test_ci(args)
-        else:
-            test_dev = base.build_command_func(f"docker-compose run --rm dev yarn run {args.test_method}")
-            test_dev(args)
-    return test_command
+def build_version_command(base):
+    def version_command(args):
+        if args.asset == 'package-json':
+            version_package_json_file(package_json_location, get_version())
+            exit(0)
+        elif args.asset == 'all':
+            version_package_json_file(package_json_location, get_version())
+
+        version_image = base.build_command_func(f"docker tag {service_image_name} {service_image_name}:{get_version()}")
+        version_image(args)
+    return version_command
 
 def init_gadget(gobase):
     gobase.register_start()
     gobase.register_stop()
     gobase.register_clean()
 
-    gobase.register_custom_child('lint', 'Run the linter', lint)
-    
-    test_subparser = gobase.register_test(build_test_command(gobase))
-    test_subparser.add_argument('test_method',
-                                choices=['debug', 'ci', 'test'],
-                                default='test',
-                                nargs='?',
-                                help='help run the tests in a specific way')
+    version_subparser = gobase.register_custom_child('version', 'version the image built for this service', build_version_command(gobase))
+    version_subparser.add_argument('asset',
+                                   choices=['all', 'package-json', 'image'],
+                                   default='all',
+                                   nargs='?',
+                                   help='version assets of the service')
