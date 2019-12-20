@@ -26,6 +26,15 @@ pipeline {
         printEnvSorted()
       }
     }
+    stage("Run all unit tests [node0.11]") {
+      steps {
+        prepareNpmEnv()
+        prepareDockerEnv()
+        printEnvSorted()
+        sh "./go set_node_version node0.11"
+        sh "./scripts/ci/test"
+      }
+    }
     stage("Lint code [node0.11]") {
       steps {
         prepareNpmEnv()
