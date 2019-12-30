@@ -24,19 +24,17 @@ pipeline {
           })
         }
         printEnvSorted()
-        // Move these to the publish stage.
-        prepareNpmEnv()
-        preparePythonEnv('3.7')
-        sh "python3.7 -m pip install gobase==0.9.3 --extra-index-url https://artifactory.tools.earnest.com/api/pypi/earnest-py/simple"
-        // End move these...
       }
     }
     stage("Publish latest version") {
-      when {
-        branch "master"
-      }
+      // when {
+      //   branch "master"
+      // }
       steps {
         printEnvSorted()
+        prepareNpmEnv()
+        preparePythonEnv('3.7')
+        sh "python3.7 -m pip install gobase==0.9.3 --extra-index-url https://artifactory.tools.earnest.com/api/pypi/earnest-py/simple"
         sh "./scripts/ci/publish"
       }
       post {
