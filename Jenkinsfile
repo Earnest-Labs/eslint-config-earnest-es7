@@ -28,12 +28,10 @@ pipeline {
         prepareNpmEnv()
         preparePythonEnv('3.7')
         sh "python3.7 -m pip install gobase==0.9.3 --extra-index-url https://artifactory.tools.earnest.com/api/pypi/earnest-py/simple"
-        sh "which pygo"
-        sh "./go set_node_version node0.11"
         // End move these...
       }
     }
-    stage("Publish latest version [node0.11]") {
+    stage("Publish latest version") {
       when {
         branch "master"
       }
