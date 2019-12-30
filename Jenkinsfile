@@ -27,12 +27,12 @@ pipeline {
       }
     }
     stage("Publish latest version [node0.11]") {
+      sh "./go set_node_version node0.11"
       when {
         branch "master"
       }
       steps {
         printEnvSorted()
-        sh "./go set_node_version node0.11"
         sh "./scripts/ci/publish"
       }
       post {
