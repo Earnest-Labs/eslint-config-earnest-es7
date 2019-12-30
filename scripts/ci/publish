@@ -1,8 +1,7 @@
 #!/bin/bash
+
 cd "$(dirname "$0")"
 source _common.sh
 
 cd "../.."
-npm install autopublish
-cd node_modules/.bin
-./autopublish .
+pygo publish
