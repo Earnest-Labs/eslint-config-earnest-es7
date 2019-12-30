@@ -41,6 +41,7 @@ pipeline {
       }
       post {
         success {
+           echo "Publish to NPM complete."
            slackSendOnMaster(
             "${env.SLACK_CHANNEL}",
             "good",
@@ -48,12 +49,6 @@ pipeline {
           )
         }
       }
-    }
-  }
-  post {
-    always {
-      echo "Cleaning up..."
-      cleanAll()
     }
   }
 }
