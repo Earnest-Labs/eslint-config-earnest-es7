@@ -18,7 +18,6 @@ pipeline {
   stages {
     stage("Set VERSION from package.json") {
       steps {
-        sh "./go set_node_version node0.11"
         script {
           env.VERSION=versionFromPackageJson("package.json",{
             packageVersionOnly = true
