@@ -3,5 +3,6 @@ cd "$(dirname "$0")"
 source _common.sh
 
 cd "../.."
-./go exec npm install autopublish
-./go exec node_modules/.bin/autopublish .
+npm install autopublish
+cd node_modules/.bin
+./autopublish .
