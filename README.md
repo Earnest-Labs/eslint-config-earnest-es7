@@ -1,4 +1,4 @@
-# eslint-config-earnest-es7 
+# eslint-config-earnest-es7
 
 Earnest's ESLint config for ES7
 
