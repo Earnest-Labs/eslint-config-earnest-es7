@@ -25,6 +25,8 @@ pipeline {
         }
         printEnvSorted()
         sh "./go set_node_version node0.11"
+        sh "which pygo"
+        sh "which gogo"
       }
     }
     stage("Publish latest version [node0.11]") {
