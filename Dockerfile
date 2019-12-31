@@ -1,4 +1,4 @@
-FROM risingstack/alpine:3.3-v4.3.1-3.0.1
+FROM node:10
 
 ARG NPM_TOKEN  
 COPY .npmrc .npmrc  
