@@ -26,10 +26,10 @@ pipeline {
         printEnvSorted()
       }
     }
-    stage("Publish latest version") {
-      // when {
-      //   branch "master"
-      // }
+    stage("Publish latest version from within Docker") {
+      when {
+        branch "master"
+      }
       steps {
         printEnvSorted()
         prepareNpmEnv()
