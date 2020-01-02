@@ -36,7 +36,7 @@ pipeline {
         prepareDockerEnv()
         preparePythonEnv('3.7')
         sh "python3.7 -m pip install gobase==0.9.3 --extra-index-url https://artifactory.tools.earnest.com/api/pypi/earnest-py/simple"
-        sh "./scripts/ci/publish"
+        sh "./go publish"
       }
       post {
         success {
