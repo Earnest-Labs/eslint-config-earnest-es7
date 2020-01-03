@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:3
 
 ARG NPM_TOKEN  
 COPY .npmrc .npmrc  
