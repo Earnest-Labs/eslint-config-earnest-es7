@@ -27,9 +27,9 @@ pipeline {
       }
     }
     stage("Publish latest version from within Docker") {
-      when {
-        branch "master"
-      }
+      // when {
+      //   branch "master"
+      // }
       steps {
         printEnvSorted()
         prepareNpmEnv()
