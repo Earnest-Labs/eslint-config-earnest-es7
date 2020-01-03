@@ -27,8 +27,9 @@
   },
   "homepage": "https://github.com/meetearnest/eslint-config-earnest-es7",
   "devDependencies": {
+    "@babel/core": "^7.7.7",
     "babel-cli": "^6.11.4",
-    "babel-core": "^6.11.4",
+    "babel-core": "^7.7.7",
     "babel-eslint": "^7.2.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.11.0",
@@ -38,7 +39,7 @@
     "mocha": "^6.2.2"
   },
   "peerDependencies": {
-    "babel-core": "^6.11.4",
+    "babel-core": "^7.7.7",
     "babel-eslint": "^7.2.2",
     "babel-preset-env": "^1.6.1",
     "eslint": "^3.19.0",
