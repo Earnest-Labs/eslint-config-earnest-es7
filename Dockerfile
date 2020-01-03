@@ -1,4 +1,4 @@
-FROM nodesource/jessie:0.12.7
+FROM node:10
 
 ARG NPM_TOKEN  
 COPY .npmrc .npmrc  
