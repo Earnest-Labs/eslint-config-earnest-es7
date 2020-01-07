@@ -1,10 +1,10 @@
 {
   "name": "@earnest/eslint-config-es7",
-  "version": "5.0.0",
+  "version": "4.0.3",
   "description": "Earnest's ESLint config for ES7",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 js:babel-core/register"
+    "test": "mocha --timeout 5000 --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -35,14 +35,14 @@
     "eslint": "^3.19.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-mocha": "^4.0.0",
-    "mocha": "^6.2.2"
+    "mocha": "^2.5.3"
   },
   "peerDependencies": {
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.2.2",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^3.19.0",
+    "eslint-plugin-mocha": "^4.0.0",
     "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-mocha": "^4.0.0"
+    "eslint": "^3.19.0"
   }
 }

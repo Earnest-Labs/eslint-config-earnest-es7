@@ -47,7 +47,7 @@ module.exports = {
  */
     "babel/new-cap": 0,
     "babel/array-bracket-spacing": 0,
-    "babel/object-curly-spacing": [2, "always"],
+    "babel/object-curly-spacing": 0,
     "babel/object-shorthand": 0,
     "babel/arrow-parens": 0,
 
@@ -88,7 +88,7 @@ module.exports = {
 /**
  * Possible errors
  */
-    "comma-dangle": [2, "always-multiline"],
+    "comma-dangle": [2, "never"],
     "no-cond-assign": [2, "always"],
     "no-console": 1,
     "no-constant-condition": 2,
@@ -209,7 +209,7 @@ module.exports = {
     }],
     "keyword-spacing": 2,
     "space-before-function-paren": [2, {
-      "anonymous": "never",
+      "anonymous": "always",
       "named": "never"
     }],
     "space-infix-ops": 2,

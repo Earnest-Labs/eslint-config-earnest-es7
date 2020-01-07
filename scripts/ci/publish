@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+: ${SNAP_CI?This script is designed to be run within SnapCI. Aborting in a cowardly fashion.}
+
+# Login to NPM
+npmrc_contents="//registry.npmjs.org/:_authToken=${NPM_TOKEN}"
+echo $npmrc_contents > "${HOME}/.npmrc"
+echo $npmrc_contents > "${SNAP_WORKING_DIR}/.npmrc"
+
+# Publish
+npm install autopublish
+node_modules/.bin/autopublish .
